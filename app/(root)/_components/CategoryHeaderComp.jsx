@@ -19,14 +19,15 @@ const CategoryHeaderComp = ({ categoryTitle, categoryLists, queryId }) => {
   const searchParams = useSearchParams();
 
   const handleCategoryChange = (value) => {
+    
     const params = new URLSearchParams(searchParams);
-    if (value && pathname === '/old-school-cartoons') {
+    if (pathname === '/old-school-cartoons') {
       params.delete('search');
       params.set('genre', String(value));
     } else {
       params.delete('genre');
     }
-    if (value && pathname === '/book-categories') {
+    if (pathname === '/book-categories') {
       params.delete('search');
       params.set('query', String(value));
     } else {

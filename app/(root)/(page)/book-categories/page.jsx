@@ -32,24 +32,22 @@ const Books = async ({ searchParams }) => {
     <>
       <SearchComp />
       <ContainerComp>
-        <Suspense fallback={<p>Loading...</p>}>
+
 
         <CategoryHeaderComp
           categoryTitle={categoryTitle?.payload}
           categoryLists={categoryLists?.payload}
           queryId={params.query}
         />
-        </Suspense>
+
         <Separator className="!bg-primary" />
         {/* Book List */}
         <ContentWrapperComp>
-          <Suspense fallback={<p>Loading...</p>}>
             <BookListComp
               searchBooks={searchBooks.payload}
               books={allBooks.payload}
               queryId={parseInt(params.query)}
             />
-          </Suspense>
         </ContentWrapperComp>
       </ContainerComp>
     </>
